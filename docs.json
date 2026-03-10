@@ -14,6 +14,12 @@
         "tab": "Guides",
         "groups": [
           {
+            "group": "Brand & media",
+            "pages": [
+              "brand"
+            ]
+          },
+          {
             "group": "Getting started",
             "pages": [
               "index",
