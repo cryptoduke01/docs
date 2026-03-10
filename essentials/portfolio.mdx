@@ -1,0 +1,91 @@
+---
+title: Portfolio
+description: Track SOL, tokens, prediction positions, Bags fee earnings, and shareable PnL cards in Siren.
+---
+
+# Portfolio
+
+The **Portfolio** view is your home base for balances, positions, and performance.
+
+---
+
+## Overview
+
+The portfolio aggregates:
+
+- **SOL balance**
+- **Tokens** held on Solana
+- **Prediction positions** from Kalshi (via DFlow)
+- **Bags fee earnings** tied to your launches and trades
+
+You can think of it as a unified view of:
+
+- On‑chain assets
+- Off‑chain prediction exposure
+- Protocol revenue from Bags.
+
+---
+
+## Tokens & positions
+
+The tokens section shows:
+
+- Token symbol and name
+- Balance and USD value (using on‑chain price feeds / Jupiter)
+- 24h / 7d performance (when available)
+
+Prediction positions show:
+
+- Market name
+- YES/NO side
+- Entry price and size
+- Mark‑to‑market value based on current probabilities
+
+---
+
+## Bags fee earnings
+
+If you launch or route trades through **Bags**, Siren surfaces:
+
+- Total fees earned
+- Fees per token you launched
+- Links out to the underlying Bags pools and analytics
+
+This makes it easy to see how much your "event‑driven" token experiments have returned.
+
+---
+
+## PnL card
+
+The **PnL card** is a shareable, branded snapshot of your performance on a single token.
+
+You choose:
+
+- A token (e.g. your Siren Bags token)
+- Its linked Kalshi market
+
+Siren then renders a card with:
+
+- Token name and symbol
+- Absolute and percentage PnL
+- Market title as context
+- Siren branding and `onsiren.xyz` footer
+
+You can:
+
+- **Download** the card as an image
+- **Share** it directly (e.g. to X, Telegram, or Discord)
+
+The card is designed to feel like a premium social asset, not a messy screenshot.
+
+---
+
+## Networks & wallets
+
+Portfolio respects the wallet / embedded wallet the user is currently connected with.
+
+- For **browser wallets** (Phantom, Solflare, Torus), balances come from the connected public key.
+- For **embedded wallets** (via Dynamic social login), Siren uses the embedded Solana wallet behind the scenes.
+
+As you connect different wallets, the portfolio view updates accordingly.
+

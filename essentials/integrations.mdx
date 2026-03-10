@@ -1,0 +1,142 @@
+---
+title: Integrations
+description: External protocols and services Siren depends on — DFlow, Bags, Jupiter, Supabase, Dynamic, Resend.
+---
+
+# Integrations
+
+Siren is a thin, opinionated layer that sits on top of several battle‑tested protocols and services.
+
+This page is the high‑level map.
+
+---
+
+## DFlow (Kalshi markets)
+
+[DFlow](https://pond.dflow.net) is how Siren connects to **Kalshi prediction markets**.
+
+Used for:
+
+- Fetching live markets and probabilities
+- Getting quotes for YES/NO trades
+- Submitting orders & transactions
+
+Keys & env:
+
+- `DFLOW_API_KEY`
+- `DFLOW_METADATA_API_URL`
+- `DFLOW_QUOTE_API_URL`
+
+Docs: [DFlow docs](https://dflow.mintlify.app)
+
+---
+
+## Bags (token launch + routing)
+
+[Bags](https://bags.fm) powers **meme token launches** and fee routing.
+
+Used for:
+
+- Creating and configuring new tokens
+- Setting partner/fee share
+- Surfacing on‑chain token stats
+
+Keys & env:
+
+- `BAGS_API_KEY`
+- `BAGS_PARTNER_CONFIG_KEY`
+- `BAGS_REF_URL`
+
+Siren Bags token:
+
+- [bags.fm/CQV1aTUmYSGA4NJLzfgyaYHfeMeLYkqh8GtXcW9MBAGS](https://bags.fm/CQV1aTUmYSGA4NJLzfgyaYHfeMeLYkqh8GtXcW9MBAGS)
+
+Docs: [Bags docs](https://docs.bags.fm)
+
+---
+
+## Jupiter (swaps)
+
+[Jupiter](https://jup.ag) is used for **token swaps** inside Siren.
+
+Used for:
+
+- Swapping SOL ↔ tokens
+- Routing through the best venues
+
+Env:
+
+- `JUPITER_API_KEY`
+
+Docs: [Jupiter docs](https://station.jup.ag/docs)
+
+---
+
+## Supabase (database + admin)
+
+[Supabase](https://supabase.com) backs Siren’s basic data layer.
+
+Used for:
+
+- **Waitlist** (`waitlist_signups`)
+- **Users** (`users` table with wallet, auth user id, signup source, country)
+- Admin queries for investor‑ready dashboards
+
+Env:
+
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+Docs: [Supabase docs](https://supabase.com/docs)
+
+---
+
+## Dynamic (auth + embedded wallets)
+
+[Dynamic](https://www.dynamic.xyz) is used for **OAuth + embedded Solana wallets**.
+
+Used for:
+
+- Social login via Google, GitHub, X
+- Creating an embedded Solana wallet per user
+- Managing sessions and MFA
+
+Env:
+
+- `NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID`
+
+Docs: [Dynamic Solana wallets](https://www.dynamic.xyz/docs/react/wallets/using-wallets/solana/solana-wallets)
+
+---
+
+## Resend (emails)
+
+[Resend](https://resend.com) sends **welcome + access‑code emails** to early users.
+
+Used for:
+
+- Access code emails when admins generate codes for waitlist signups
+
+Env:
+
+- `RESEND_API_KEY`
+- `SIREN_EMAIL_FROM`
+- `SIREN_APP_URL`
+
+Docs: [Resend Node docs](https://resend.com/docs/send-with-nodejs)
+
+---
+
+## Putting it together
+
+At a high level:
+
+- **Supabase** stores waitlists and users.
+- **DFlow** streams markets.
+- **Bags** creates tokens and routes fees.
+- **Jupiter** trades tokens.
+- **Dynamic** authenticates users and provides wallets.
+- **Resend** handles email.
+
+Siren’s job is to stitch these together into a **single event‑driven trading experience**.
+

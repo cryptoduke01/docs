@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "dark",
+  "name": "Siren Terminal Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#a855f7",
+    "light": "#c4b5fd",
+    "dark": "#4c1d95"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -22,27 +22,17 @@
             ]
           },
           {
-            "group": "Customization",
+            "group": "Product",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "essentials/terminal",
+              "essentials/portfolio",
+              "essentials/launch"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Integrations",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "essentials/integrations"
             ]
           }
         ]
@@ -71,14 +61,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Siren app",
+          "href": "https://onsiren.xyz",
+          "icon": "rocket"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Siren Bags token",
+          "href": "https://bags.fm/CQV1aTUmYSGA4NJLzfgyaYHfeMeLYkqh8GtXcW9MBAGS",
+          "icon": "currency-dollar"
         }
       ]
     }
@@ -91,32 +81,30 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hello@onsiren.xyz"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Siren",
+      "href": "https://onsiren.xyz"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/cryptoduke01/docs"
     }
   }
 }

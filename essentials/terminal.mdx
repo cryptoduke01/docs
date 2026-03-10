@@ -1,0 +1,85 @@
+---
+title: Terminal
+description: Browse Kalshi prediction markets, surface Bags meme tokens, and trade from the Siren terminal.
+---
+
+# Terminal
+
+The **Terminal** is the main Siren screen. It connects **prediction markets** and **tokens** in one place.
+
+---
+
+## Markets
+
+Markets come from Kalshi via DFlow.
+
+Each row typically shows:
+
+- **Market** – question or event (e.g. "Will BTC close above $100k in 2025?")
+- **Probability** – live YES probability
+- **Change / velocity** – how fast the market is moving
+- **Volume & open interest** – activity on the contract
+
+You can filter by **category** (Politics, Crypto, Macro, Sports, etc.) or search by keyword.
+
+Click a market to open the **market detail** panel.
+
+---
+
+## Market detail
+
+The market detail shows:
+
+- Full market text and description
+- Current YES/NO prices and implied probabilities
+- Volume, open interest, and recent moves
+- **Linked tokens**: Bags tokens and other Solana tokens whose narratives match the market
+
+This is where Siren becomes "event-driven": markets and tokens live side‑by‑side.
+
+---
+
+## Linked tokens
+
+For each market, Siren surfaces relevant tokens by:
+
+- Matching market keywords to token names, tickers, and descriptions
+- Prioritizing **Bags tokens** and Siren‑related narratives
+
+Each token row shows:
+
+- Token name + symbol
+- Price and 24h change
+- Market cap / FDV (when available)
+- Links out to explorers and DEXs
+
+From this panel you can open the **unified buy panel** to trade either the market or the token.
+
+---
+
+## Unified buy panel
+
+The unified buy panel is shared between markets and tokens.
+
+- For **markets**: buy YES or buy NO via DFlow.
+- For **tokens**: swap via Jupiter (e.g. SOL → token or token → SOL).
+
+Siren handles:
+
+- Getting quotes and slippage limits
+- Preparing Solana transactions
+- Submitting through your connected wallet or embedded wallet
+
+If a market is hot but no obvious token exists, the panel can also suggest launching a new **Bags token** from this market.
+
+---
+
+## Access gating
+
+In production, the Terminal is gated behind a **6‑digit access code**. This is configured on the API and web env via:
+
+- `SIREN_ACCESS_CODE` (API)
+- `SIREN_GATE_ENABLED` (web)
+
+See the [Quickstart](../quickstart) page for how users get access.
+
