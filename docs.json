@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "dark",
+  "theme": "mint",
   "name": "Siren Terminal Docs",
   "colors": {
     "primary": "#a855f7",
