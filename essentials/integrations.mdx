@@ -1,6 +1,6 @@
 ---
 title: Integrations
-description: External protocols and services Siren depends on - DFlow, Bags, Jupiter, Supabase, Dynamic, Resend.
+description: External protocols and services Siren depends on - Kalshi, Polymarket, DFlow, Bags, Jupiter, Privy, Supabase, and Resend.
 ---
 
 # Integrations
@@ -11,7 +11,7 @@ This page is the high‑level map.
 
 ---
 
-## DFlow (Kalshi markets)
+## Kalshi + DFlow
 
 [DFlow](https://pond.dflow.net) is how Siren connects to **Kalshi prediction markets**.
 
@@ -28,6 +28,26 @@ Keys & env:
 - `DFLOW_QUOTE_API_URL`
 
 Docs: [DFlow docs](https://dflow.mintlify.app)
+
+---
+
+## Polymarket
+
+[Polymarket](https://polymarket.com) is Siren’s second live signal source.
+
+Used for:
+
+- Fetching active markets from the Gamma API
+- Reading order book snapshots from the CLOB
+- Detecting fast probability moves in parallel with Kalshi
+- Feeding the same Siren signal rail and token-matching pipeline
+
+Env:
+
+- `POLYMARKET_API_KEY`
+- `POLYMARKET_SECRET`
+- `POLYMARKET_PASSPHRASE`
+- `POLYMARKET_HOST`
 
 ---
 
@@ -91,21 +111,22 @@ Docs: [Supabase docs](https://supabase.com/docs)
 
 ---
 
-## Dynamic (auth + embedded wallets)
+## Privy (auth + embedded wallets)
 
-[Dynamic](https://www.dynamic.xyz) is used for **OAuth + embedded Solana wallets**.
+[Privy](https://privy.io) is used for **social auth + embedded wallets**.
 
 Used for:
 
 - Social login via Google, GitHub, X
-- Creating an embedded Solana wallet per user
-- Managing sessions and MFA
+- Creating embedded **Solana** wallets for execution
+- Creating embedded **EVM** wallets for Base / Ethereum / Polygon account rails
+- Managing sessions and wallet export flows
 
 Env:
 
-- `NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID`
+- `NEXT_PUBLIC_PRIVY_APP_ID`
 
-Docs: [Dynamic Solana wallets](https://www.dynamic.xyz/docs/react/wallets/using-wallets/solana/solana-wallets)
+Docs: [Privy docs](https://docs.privy.io)
 
 ---
 
@@ -132,11 +153,11 @@ Docs: [Resend Node docs](https://resend.com/docs/send-with-nodejs)
 At a high level:
 
 - **Supabase** stores waitlists and users.
-- **DFlow** streams markets.
+- **Kalshi / DFlow** power the prediction market execution rail.
+- **Polymarket** powers the second live signal rail.
 - **Bags** creates tokens and routes fees.
 - **Jupiter** trades tokens.
-- **Dynamic** authenticates users and provides wallets.
+- **Privy** authenticates users and provisions embedded wallets.
 - **Resend** handles email.
 
 Siren’s job is to stitch these together into a **single event‑driven trading experience**.
-

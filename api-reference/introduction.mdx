@@ -1,33 +1,40 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Introduction"
+description: "Siren API overview for markets, signals, tokens, and pricing."
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Overview
 
-## Welcome
+Siren exposes a lightweight API for:
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+- `GET /api/markets`
+- `GET /api/signals`
+- `GET /api/tokens`
+- `GET /api/token-info`
+- `GET /api/sol-price`
+
+The read layer powers the live terminal, selected-market card, token surface, and portfolio pricing.
+
+## Current product shape
+
+- **Kalshi** and **Polymarket** both feed the signal and market rails.
+- **DexScreener** and **Bags** support token discovery.
+- **DFlow** powers the current in-app prediction market execution rail.
+
+## OpenAPI
+
+The OpenAPI file lives here:
 
 <Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+  title="Siren OpenAPI spec"
+  icon="code"
+  href="/api-reference/openapi.json"
 >
-  View the OpenAPI specification file
+  View the Siren API specification file
 </Card>
 
-## Authentication
+## Notes
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+- Read endpoints are designed for the terminal and portfolio surfaces first.
+- Signal responses include source attribution so clients can distinguish **Kalshi** vs **Polymarket**.
+- Venue compliance still applies to execution flows such as Kalshi trading.

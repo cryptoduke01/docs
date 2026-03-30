@@ -3,9 +3,23 @@
   "theme": "mint",
   "name": "Siren Terminal Docs",
   "colors": {
-    "primary": "#a855f7",
-    "light": "#c4b5fd",
-    "dark": "#4c1d95"
+    "primary": "#00FF85",
+    "light": "#7DFFC4",
+    "dark": "#078A55"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Clash Display",
+      "source": "/fonts/clash-display-700.woff2",
+      "format": "woff2",
+      "weight": 700
+    },
+    "body": {
+      "family": "Inter",
+      "source": "/fonts/inter-400.woff2",
+      "format": "woff2",
+      "weight": 400
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -111,7 +125,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/sirentracker",
-      "github": "https://github.com/cryptoduke01/docs"
+      "github": "https://github.com/cryptoduke01/siren"
     }
   }
 }
