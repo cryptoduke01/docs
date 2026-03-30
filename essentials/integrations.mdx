@@ -40,7 +40,7 @@ Used for:
 - Fetching active markets from the Gamma API
 - Reading order book snapshots from the CLOB
 - Detecting fast probability moves in parallel with Kalshi
-- Feeding the same Siren signal rail and token-matching pipeline
+- Feeding the same Siren signal feed and token-matching flow
 
 Env:
 
@@ -119,7 +119,7 @@ Used for:
 
 - Social login via Google, GitHub, X
 - Creating embedded **Solana** wallets for execution
-- Creating embedded **EVM** wallets for Base / Ethereum / Polygon account rails
+- Creating embedded **EVM** wallets for Base / Ethereum / Polygon accounts
 - Managing sessions and wallet export flows
 
 Env:
@@ -153,8 +153,8 @@ Docs: [Resend Node docs](https://resend.com/docs/send-with-nodejs)
 At a high level:
 
 - **Supabase** stores waitlists and users.
-- **Kalshi / DFlow** power the prediction market execution rail.
-- **Polymarket** powers the second live signal rail.
+- **Kalshi / DFlow** power the current in-app prediction market trade flow.
+- **Polymarket** powers the second live signal source.
 - **Bags** creates tokens and routes fees.
 - **Jupiter** trades tokens.
 - **Privy** authenticates users and provisions embedded wallets.

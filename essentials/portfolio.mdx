@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-description: Track Solana and Base wallet rails, prediction positions, Bags fee earnings, and key portfolio actions in Siren.
+description: Track Solana and Base wallets, prediction positions, Bags fee earnings, and key portfolio actions in Siren.
 ---
 
 # Portfolio
@@ -14,7 +14,7 @@ The **Portfolio** view is your home base for balances, positions, and performanc
 The portfolio aggregates:
 
 - **Solana balance**
-- **Base receive balance and address rail**
+- **Base balance and deposit address**
 - **Tokens** held on Solana
 - **Prediction positions** from Kalshi (via DFlow)
 - **Bags fee earnings** tied to your launches and trades
@@ -29,12 +29,12 @@ You can think of it as a unified view of:
 
 ---
 
-## Wallet rails
+## Wallets
 
 Siren is Privy-first.
 
 - The embedded **Solana** wallet is used for terminal execution.
-- The embedded **EVM** wallet rail gives you a **Base** deposit address.
+- The embedded **EVM** wallet gives you a **Base** deposit address.
 - Portfolio shows the receive addresses you actually need, without making you leave the product.
 
 For teams and power users, the embedded execution key can be exported from the portfolio / wallet controls.
@@ -79,7 +79,7 @@ Portfolio includes fast wallet operations:
 - Copy the **Solana** receive address
 - Copy the **Base** receive address
 - Show QR codes for deposits
-- Send Solana assets from the embedded execution rail
+- Send Solana assets from the built-in wallet
 
 This turns Portfolio into an actual account surface, not just a read-only tracker.
 
@@ -90,6 +90,6 @@ This turns Portfolio into an actual account surface, not just a read-only tracke
 Portfolio respects the wallet / embedded wallet the user is currently connected with.
 
 - For **browser wallets** (Phantom, Solflare, Torus), balances come from the connected public key.
-- For **embedded wallets** (via Privy social login), Siren uses the embedded Solana and EVM wallet rails behind the scenes.
+- For **embedded wallets** (via Privy social login), Siren uses the built-in Solana and EVM wallets behind the scenes.
 
 As you connect different wallets, the portfolio view updates accordingly.

@@ -11,7 +11,7 @@ The **Terminal** is the main Siren screen. It connects **prediction markets** an
 
 ## Live signal feed
 
-The left rail is a shared live feed for **Kalshi** and **Polymarket**.
+The left side of the Terminal is a shared live feed for **Kalshi** and **Polymarket**.
 
 Each signal card shows:
 
@@ -28,19 +28,19 @@ Use the top filter to toggle:
 - **KALSHI**
 - **POLYMARKET**
 
-Siren also shows per-source connection health so one market venue failing does not take down the full terminal.
+Siren also shows connection health for each source, so one feed failing does not break the whole terminal.
 
 ---
 
 ## Markets
 
-Below the signal rail is the broader market browser.
+Below the signal feed is the broader market browser.
 
 You can:
 
 - Filter by category
 - Search by keyword
-- Open a market from either rail
+- Open a market from either source
 - Jump straight into the token surface beneath it
 
 ---
@@ -52,7 +52,7 @@ The selected market card is the center of the terminal.
 It shows:
 
 - Full market text
-- Venue rail
+- Source
 - Current YES / NO probability
 - Velocity and liquidity
 - Market metadata
@@ -83,8 +83,8 @@ From this panel you can open the buy / sell panel and execute the token leg dire
 
 ## Execution notes
 
-- **Kalshi** powers the prediction market rail in Siren today.
-- **Polymarket** is live as a parallel signal and market-context source.
+- **Kalshi** powers the current in-app prediction market trade flow.
+- **Polymarket** is live as a second market data and signal source.
 - **Jupiter** powers token swaps on the Solana side.
 
 This keeps the core workflow tight:
