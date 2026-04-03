@@ -1,6 +1,6 @@
 ---
 title: Terminal
-description: Browse Kalshi and Polymarket, surface matched Solana tokens, and move through the Siren terminal quickly.
+description: Browse Kalshi prediction markets, surface Bags meme tokens, and trade from the Siren terminal.
 ---
 
 # Terminal
@@ -9,56 +9,33 @@ The **Terminal** is the main Siren screen. It connects **prediction markets** an
 
 ---
 
-## Live signal feed
-
-The left side of the Terminal is a shared live feed for **Kalshi** and **Polymarket**.
-
-Each signal card shows:
-
-- **Source badge**: Kalshi or Polymarket
-- **Question**
-- **Probability delta**
-- **Timestamp**
-- **Linked token count**
-- **Volume context**
-
-Use the top filter to toggle:
-
-- **ALL**
-- **KALSHI**
-- **POLYMARKET**
-
-Siren also shows connection health for each source, so one feed failing does not break the whole terminal.
-
----
-
 ## Markets
 
-Below the signal feed is the broader market browser.
+Markets come from Kalshi via DFlow.
 
-You can:
+Each row typically shows:
 
-- Filter by category
-- Search by keyword
-- Open a market from either source
-- Jump straight into the token surface beneath it
+- **Market**: Question or event (e.g. "Will BTC close above $100k in 2025?")
+- **Probability**: Live YES probability
+- **Change / velocity**: How fast the market is moving
+- **Volume & open interest**: Activity on the contract
+
+You can filter by **category** (Politics, Crypto, Macro, Sports, etc.) or search by keyword.
+
+Click a market to open the **market detail** panel.
 
 ---
 
 ## Market detail
 
-The selected market card is the center of the terminal.
+The market detail shows:
 
-It shows:
+- Full market text and description
+- Current YES/NO prices and implied probabilities
+- Volume, open interest, and recent moves
+- **Linked tokens**: Bags tokens and other Solana tokens whose narratives match the market
 
-- Full market text
-- Source
-- Current YES / NO probability
-- Velocity and liquidity
-- Market metadata
-- A branded **share / download** export action
-
-This is the social object too. The exported image is branded with `onsiren.xyz`, so the same market view can travel cleanly to X, Telegram, or group chats.
+This is where Siren becomes "event-driven": markets and tokens live side‑by‑side.
 
 ---
 
@@ -66,33 +43,34 @@ This is the social object too. The exported image is branded with `onsiren.xyz`,
 
 For each market, Siren surfaces relevant tokens by:
 
-- Matching market language to token names, tickers, and descriptions
-- Querying the Solana meme universe through DexScreener
-- Prioritizing launch-ready narratives when a market clearly wants its own token
+- Matching market keywords to token names, tickers, and descriptions
+- Prioritizing **Bags tokens** and Siren‑related narratives
 
 Each token row shows:
 
 - Token name + symbol
 - Price and 24h change
-- Liquidity / FDV (when available)
-- Risk context and launchpad metadata when available
+- Market cap / FDV (when available)
+- Links out to explorers and DEXs
 
-From this panel you can open the buy / sell panel and execute the token leg directly in Siren.
+From this panel you can open the **unified buy panel** to trade either the market or the token.
 
 ---
 
-## Execution notes
+## Unified buy panel
 
-- **Kalshi** powers the current in-app prediction market trade flow.
-- **Polymarket** is live as a second market data and signal source.
-- **Jupiter** powers token swaps on the Solana side.
+The unified buy panel is shared between markets and tokens.
 
-This keeps the core workflow tight:
+- For **markets**: buy YES or buy NO via DFlow.
+- For **tokens**: swap via Jupiter (e.g. SOL → token or token → SOL).
 
-1. Detect the event move
-2. Open the market
-3. Sweep the linked Solana token flow
-4. Share the market card or move into launch mode
+Siren handles:
+
+- Getting quotes and slippage limits
+- Preparing Solana transactions
+- Submitting through your connected wallet or embedded wallet
+
+If a market is hot but no obvious token exists, the panel can also suggest launching a new **Bags token** from this market.
 
 ---
 
@@ -104,3 +82,4 @@ In production, the Terminal is gated behind a **6‑digit access code**. This is
 - `SIREN_GATE_ENABLED` (web)
 
 See the [Quickstart](../quickstart) page for how users get access.
+

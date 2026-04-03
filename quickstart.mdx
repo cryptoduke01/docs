@@ -1,6 +1,6 @@
 ---
 title: Quickstart
-description: Get into Siren in a few minutes with Privy sign-in, embedded wallets, and the first terminal flow.
+description: Get into Siren in a few minutes - access code, wallets, and first trade.
 ---
 
 # Quickstart
@@ -21,20 +21,28 @@ If you lose your code, reply to the welcome email or contact the Siren team.
 
 ---
 
-## 2. Sign in with Privy
+## 2. Connect or sign in
 
 On [onsiren.xyz](https://onsiren.xyz):
 
+### Connect a Solana wallet
+
+- **Supported:** Phantom, Solflare, Torus (via Solana Wallet Adapter).
+- Once connected, Siren tracks:
+  - Your SOL balance
+  - Tokens
+  - Prediction positions
+  - Bags fee earnings
+
+### Sign in with Google / GitHub / X
+
+If you don’t want to install a wallet yet, you can sign in with:
+
 - **Google**
 - **GitHub**
-- **X**
+- **X (Twitter)** (once configured)
 
-Behind the scenes, Siren uses **Privy** to provision:
-
-- An embedded **Solana** wallet for terminal execution
-- An embedded **EVM** wallet for **Base / Ethereum / Polygon**
-
-If you later want self-custody, you can export the embedded execution key from inside the product.
+Behind the scenes, Siren uses **Dynamic** to create an **embedded Solana wallet** for you. You can later export keys or connect a full wallet.
 
 ---
 
@@ -43,52 +51,51 @@ If you later want self-custody, you can export the embedded execution key from i
 Once you’re in:
 
 1. Open the **Terminal** tab.
-2. Watch the live signal feed:
-   - **ALL**
-   - **KALSHI**
-   - **POLYMARKET**
-3. Use filters to browse markets by category:
+2. Use filters to browse markets by category:
    - Politics
    - Crypto
+   - Macro
    - Sports
-   - Business
-   - Entertainment
-4. Click a market to open its detail card:
+   - Other events
+3. Click a market to open its detail view:
    - Live probability
    - Volume and velocity
-   - Source
-   - Linked Solana tokens
-   - Share / download export
+   - Linked Bags tokens and other Solana tokens
 
 ---
 
-## 4. Trade a token from the market narrative
+## 4. Trade a market or token
 
-### Trade the linked token flow
+### Trade a prediction market
 
-- Select a market.
-- Review the linked token surface.
-- Use the trade panel to buy or sell the token you want.
+- Use the unified buy/sell panel to buy **YES** or **NO** on a Kalshi market via DFlow.
+- Siren handles:
+  - Quotes
+  - Slippage
+  - Transaction construction
 
-Siren handles quotes, routing, and transaction construction for the Solana execution leg.
+> Note: Siren enforces geo‑fencing for **US and restricted Kalshi jurisdictions** where required.
 
-### Prediction market note
+### Swap a token
 
-- Kalshi market execution is subject to venue compliance and KYC.
-- Polymarket market data is live in Siren.
-- Direct Polymarket order entry inside Siren is still being added.
+- From a market’s linked tokens or from the **Trending / Portfolio** views:
+  - Choose a token
+  - Use the swap panel (powered by Jupiter) to buy or sell.
 
 ---
 
-## 5. Open your portfolio
+## 5. Share your PnL
 
-In **Portfolio** you can:
+In the **Portfolio → PnL card**:
 
-- See your Solana balance
-- Copy your **Base** deposit address
-- Track prediction positions
-- Monitor Bags fee earnings
-- Export the embedded wallet private key when needed
+- Pick a token and its linked Kalshi market.
+- Siren generates a **shareable, branded PnL card** with:
+  - Token symbol
+  - PnL and percentage
+  - Market name
+  - Siren branding + `onsiren.xyz`
+
+You can **download** the card as an image or share it directly.
 
 ---
 
@@ -104,7 +111,7 @@ When you see an event with no obvious token:
    - Image and branding
 4. Siren wires this to **Bags** for launch, liquidity, and fee share.
 
-See the [Launch](./essentials/launch) page for a full walkthrough.
+See the [Launch](./launch) page for a full walkthrough.
 
 ---
 
